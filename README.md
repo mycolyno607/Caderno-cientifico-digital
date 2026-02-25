@@ -1,2 +1,2 @@
-# Ella.IA
-Ella.IA é a inteligência artifiicial do futuro  
+# Caderno cientifico digital 
+site para anotações e realizar simulações de : Fisica (Quantica, nuclear , torica e Básica ) ,biologia, astronomia, robotica, etc...
