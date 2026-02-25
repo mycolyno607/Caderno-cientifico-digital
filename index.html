@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caderno Científico Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>🧪 Caderno Científico Digital</h1>
+        <nav>
+            <button onclick="showTab('notes')">Notas</button>
+            <button onclick="showTab('microscope')">Microscópio</button>
+            <button onclick="showTab('wormhole')">Wormhole</button>
+            <button onclick="showTab('blueprint')">Blueprint</button>
+        </nav>
+    </div>
+
+    <!-- ABA NOTAS -->
+    <div id="notes" class="tab-content active">
+        <div class="note-controls">
+            <input id="note-title" placeholder="Título da nota">
+            <textarea id="note-content" placeholder="Conteúdo..."></textarea>
+            <button onclick="saveNote()">Salvar Nota</button>
+            <button onclick="loadNotes()">Carregar Notas</button>
+        </div>
+        <div id="notes-list"></div>
+    </div>
+
+    <!-- ABA MICRoscóPIO -->
+    <div id="microscope" class="tab-content">
+        <div class="video-container">
+            <video id="mic-video" autoplay playsinline></video>
+            <canvas id="mic-overlay"></canvas>
+            <div id="mic-status">Clique para iniciar câmera</div>
+        </div>
+        <div class="mic-controls">
+            <label>Sensibilidade: <input type="range" id="motion-threshold" min="10" max="100" value="35"></label>
+            <label>Movimento mínimo: <input type="range" id="motion-minpixels" min="100" max="1000" value="300"></label>
+        </div>
+    </div>
+
+    <!-- ABA WORMHOLE -->
+    <div id="wormhole" class="tab-content">
+        <div id="wormhole-panel">
+            <h3>🔭 Simulador de Wormhole</h3>
+            <label>Distância externa (km): <input id="wh-Dext" type="number" value="384400"></label>
+            <label>Distância wormhole (km): <input id="wh-Dwh" type="number" value="1000"></label>
+            <label>Velocidade (c): <input id="wh-v" type="number" step="0.01" value="0.5"></label>
+            <button onclick="simularWormhole()">Calcular</button>
+            <button onclick="presetTerraLua()">Terra-Lua</button>
+            <button onclick="presetExoplaneta()">HD 137010 b</button>
+            <pre id="wh-output"></pre>
+        </div>
+    </div>
+
+    <!-- ABA BLUEPRINT -->
+    <div id="blueprint" class="tab-content">
+        <canvas id="bp-canvas" width="800" height="600"></canvas>
+        <div class="bp-tools">
+            <button onclick="bpTool('line')">Linha</button>
+            <button onclick="bpTool('circle')">Círculo</button>
+            <button onclick="bpTool('rect')">Retângulo</button>
+            <button onclick="bpClear()">Limpar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
